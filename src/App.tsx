@@ -20,8 +20,7 @@ export default function App() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const initial = getInitialData();
-  const [config, setConfig] = useState<BotConfig>(initial.config);
-  // Убрали демо-треки — пустая библиотека по умолчанию
+  const [config] = useState<BotConfig>(initial.config);
   const [tracks, setTracks] = useState<Track[]>(initial.tracks);
   const [logs, setLogs] = useState<LogEntry[]>(initial.logs);
 
@@ -201,7 +200,7 @@ export default function App() {
           {page === 'library' && <LibraryPage tracks={tracks} onDelete={deleteTrack} onPlayTrack={playTrack} onAddToQueue={addToQueue} goUpload={() => setPage('upload')} />}
           {page === 'queue' && <QueuePage queue={queue} currentTrack={currentTrack} isPlaying={isPlaying} onRemove={removeFromQueue} onClear={() => { setQueue([]); addLog('warn', 'Очередь очищена'); }} onPlayIndex={playQueueIndex} />}
           {page === 'upload' && <UploadPage onAdd={addTrackToLibrary} />}
-          {page === 'settings' && <SettingsPage config={config} onSave={(c) => { setConfig(c); setVolume(c.volume); addLog('success', 'Настройки сохранены'); }} />}
+          {page === 'settings' && <SettingsPage />}
           {page === 'logs' && <LogsPage logs={logs} onClear={() => setLogs([])} />}
         </main>
       </div>
