@@ -19,6 +19,7 @@
     "express": "^5.2.1",
     "mediaplex": "^1.0.0",
     "mongoose": "^9.6.3",
+    "pg": "^8.21.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "tailwind-merge": "3.4.0"
