@@ -2,7 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const path = require('path');
 
-const DATABASE_URL = process.env.DATABASE_URL || process.env.DATABASE_PUBLIC_URL;
+const DATABASE_URL = process.env.DATABASE_URL || process.env.DATABASE_PUBLIC_URL || 'postgresql://postgres:nJzLejgzLPytNXhIKcEEbbJurUTftAqd@postgres.railway.internal:5432/railway';
 const PORT = process.env.PORT || 3000;
 
 // PostgreSQL
